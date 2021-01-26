@@ -17,7 +17,6 @@ import { UpdateInfoComponent } from './Components/update-info/update-info.compon
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './Components/admin/admin.component';
 import { UpdateUserDialog } from './Components/update-user-dialog/update-user-dialog.component';
-import { JoinPipe } from './Pipes/join.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -32,8 +31,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UserInfoComponent,
     UpdateInfoComponent,
     AdminComponent,
-    UpdateUserDialog,
-    JoinPipe
+    UpdateUserDialog
   ],
   imports: [
     BrowserModule,
