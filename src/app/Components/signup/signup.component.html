@@ -1,0 +1,128 @@
+<div class="flex-container">
+  <div class="example-container" [formGroup]="signupForm">
+    <p *ngIf= "isExist">
+      <ngb-alert type='danger' (closed)="close()">Email already exist.</ngb-alert>
+    </p>
+    <mat-form-field appearance="fill" style="width: 300px;">
+      <mat-label for="exampleInputFN">First Name</mat-label>
+      <input
+        type="text"
+        matInput
+        required
+        [formControl]="fNameFormControl" 
+        [errorStateMatcher]="matcher"
+        placeholder="Ex. John"
+        class="form-control"
+        id="exampleInputFN"
+        aria-describedby="fnHelp"
+      />
+      <!-- <mat-error *ngIf="!fNameFormControl.hasError('required')">
+        Please enter a valid First Name
+      </mat-error> -->
+      <mat-error *ngIf="fNameFormControl.hasError('required')">
+        First Name is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="fNameFormControl.hasError('pattern')">
+        First Name should be <strong>alphabet</strong>
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field appearance="fill" style="width: 300px;">
+      <mat-label for="exampleInputFN">Last Name</mat-label>
+      <input
+        type="text"
+        matInput
+        required
+        [formControl]="lNameFormControl" 
+        [errorStateMatcher]="matcher"
+        placeholder="Ex. Wick"
+        class="form-control"
+        id="exampleInputLN"
+        aria-describedby="lnHelp"
+      />
+      <!-- <mat-error *ngIf="lNameFormControl.hasError('email') && !lNameFormControl.hasError('required')">
+        Please enter a valid Last Name
+      </mat-error> -->
+      <mat-error *ngIf="lNameFormControl.hasError('required')">
+        Last Name is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="lNameFormControl.hasError('pattern')">
+        Last Name should be <strong>alphabet</strong>
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field appearance="fill" style="width: 300px;">
+      <mat-label for="exampleInputEmail1">Email address</mat-label>
+      <input
+        type="email"
+        matInput
+        required
+        [formControl]="emailFormControl" 
+        [errorStateMatcher]="matcher"
+        placeholder="Ex. pat@example"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <!-- Password -->
+    <mat-form-field appearance="fill" style="width: 300px;">
+      <mat-label for="exampleInputPassword1">Password</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        class="form-control"
+        id="exampleInputPassword1"
+        [formControl]="passFormControl"
+        [errorStateMatcher]="matcher"
+        placeholder="Password"
+      />
+    <br />
+      <button mat-icon-button
+      matSuffix (click)="hide = !hide" 
+      [attr.aria-label]="'Hide password'" 
+      [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="passFormControl.hasError('password') && !passFormControl.hasError('required')">
+          Please enter a valid Password
+        </mat-error>
+        <mat-error *ngIf="!passFormControl.hasError('minLength') && !passFormControl.hasError('required')">
+          Password must be at least 4 characters long
+        </mat-error>
+        <mat-error *ngIf="passFormControl.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <br />
+
+    <!-- User Role -->
+    <label>User Role: </label>
+    <mat-radio-group [formControl]="floatLabelControl">
+      <mat-radio-button value="user" [checked]='true'>User</mat-radio-button>
+      <mat-radio-button disabled="true" value="admin">Admin</mat-radio-button>
+    </mat-radio-group>
+    <br />
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="addUser()"
+      [disabled]="signupForm.invalid"
+      type="submit"
+      class = "btn"
+    >
+      Sign Up
+    </button>
+  </div>
+</div>

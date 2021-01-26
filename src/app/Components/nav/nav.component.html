@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="navbar">
+  <div>
+    <button style="align-items: flex-start;" mat-icon-button class="example-icon"
+      aria-label="Example icon-button with menu icon" routerLink="profile">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a><span style="align-items: flex-start;" routerLink="profile">Social Valley</span></a>
+  </div>
+
+  <div *ngIf="state === false">
+    <a mat-button style="align-items: flex-end;" routerLink="login">Login</a>
+    <a mat-button style="align-items: flex-end;" routerLink="signup">Signup</a>
+  </div>
+
+  <div *ngIf="state === true">
+    <a mat-button style="align-items: flex-end;" (click)="logout()" routerLink="login">Logout</a>
+  </div>
+
+
+
+</mat-toolbar>

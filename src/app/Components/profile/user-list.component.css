@@ -1,0 +1,38 @@
+.nav-extended {
+  background-color: #9187b3;
+}
+.nav-content {
+  height: 250px;
+}
+
+.nav-div {
+  width: 300px;
+  height: auto;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 0px;
+}
+
+.nav-div img {
+  margin-top: 20px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 10px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  margin: 20 auto;
+}
+
+.profile-name {
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.user-text {
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+}

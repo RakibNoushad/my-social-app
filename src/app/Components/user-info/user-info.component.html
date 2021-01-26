@@ -1,0 +1,161 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <mat-list role="list">
+      <mat-list-item role="listitem">
+        <button style="width: 100%; text-align: left" mat-stroked-button color="primary"
+          (click)="toggle(1)">Overview</button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button style="width: 100%; text-align: left" mat-stroked-button color="primary" (click)="toggle(2)">Work &
+          Education</button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button style="width: 100%; text-align: left" mat-stroked-button color="primary"
+          (click)="toggle(3)">Others</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content style="height: 70vh; padding: 10px 50px;">
+
+    <div *ngIf="infoContent== 1">
+      <div class= "profile">
+          <div class="row">
+            <div class="col-md-6">
+                <label>First Name</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{firstname}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Last Name</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{lastname}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Email</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{email}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Phone</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{phone}}</p>
+            </div>
+        </div>  
+      </div>
+    </div>
+
+    <div *ngIf="infoContent== 2">
+      <div class= "profile">
+        <div class="row">
+          <div class="col-md-6">
+              <label>Profession</label>
+          </div>
+          <div class="col-md-6">
+              <p>{{profession}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+              <label>From</label>
+          </div>
+          <div class="col-md-6">
+              <p>{{location }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="infoContent== 3">
+      <div class= "profile">
+        <div class="row">
+          <div class="col-md-6">
+              <label>Date of Birth</label>
+          </div>
+          <div class="col-md-6">
+              <p>{{dob}}</p>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <label>Gender</label>
+          </div>
+          <div class="col-md-6">
+              <p>{{gender}}</p>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <label>Interest</label>
+          </div>
+          <div class="col-md-6">
+              <div class="interest">
+                <p *ngFor="let item of interest">"{{item.name}}" "</p>
+              </div>   
+          </div>
+      </div> 
+      </div>
+    
+</div>
+
+    <!-- <mat-grid-list cols="3" rowHeight="2:1">
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title class="title">Basic</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="card-content">
+              Birthdate: <strong>5/5/20</strong>
+            </div>
+            <div class="card-content">
+              Gender: <strong>male</strong>
+            </div>
+            <div class="card-content">
+              Interests: <strong>Pooping</strong>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title class="title">Contact</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="card-content">
+              Address: <strong>127, abc road, dhaka</strong>
+            </div>
+            <div class="card-content">
+              Phone: <strong>0101010251</strong>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title class="title">Work & Education</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="card-content">
+              Work: <strong>Astha.it</strong>
+            </div>
+            <div class="card-content">
+              Education: <strong>DIU</strong>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list> -->
+  </mat-drawer-content>
+</mat-drawer-container>

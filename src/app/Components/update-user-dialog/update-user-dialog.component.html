@@ -1,0 +1,54 @@
+<div class="example-container" [formGroup]="userInfo" (ngSubmit)="updateUserInfo()">
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput placeholder="" formControlName="firstName">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input matInput placeholder="" formControlName="lastName">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="" formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput 
+    placeholder="" 
+    [type]="hide ? 'password' : 'text'"
+    formControlName="password">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date Of Birth</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Profession</mat-label>
+    <input matInput placeholder="" formControlName="profession">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <span matPrefix>+88 &nbsp;</span>
+    <input 
+    type="tel" 
+    matInput 
+    formControlName="phone"
+    placeholder="555-555-1234">
+    <mat-icon matSuffix>phone</mat-icon>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" 
+  (click)="updateUserInfo()"
+  mat-dialog-close>Update</button>
+</div>

@@ -1,0 +1,16 @@
+.example-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+mat-form-field, button{
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+button{
+  width: 10%;
+  margin-bottom: 30px;
+}
