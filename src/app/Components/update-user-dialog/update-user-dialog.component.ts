@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { MatDialog, MAT_DIALOG_DATA, _closeDialogVia } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { AuthServiceService } from 'src/app/Services/auth-service.service';
-import { IInterest, UserDetails, UserService } from 'src/app/Services/user-service.service';
+import { AuthServiceService } from '../../Services/auth-service.service';
+import { IInterest, UserDetails, UserService } from '../../Services/user-service.service';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 /**
  * @title Dialog with header, scrollable content and actions

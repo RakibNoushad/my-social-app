@@ -7,7 +7,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from 'src/in-memory-data.service';
+import { InMemoryDataService } from '../in-memory-data.service';
 import { SignupComponent } from './Components/signup/signup.component';
 import { LoginComponent } from './Components/login/login.component';
 import { UserListComponent } from './Components/profile/user-list.component';
@@ -43,7 +43,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 }),
     NgbModule
   ],
-  providers: [FormControl],
+  // providers: [FormControl],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

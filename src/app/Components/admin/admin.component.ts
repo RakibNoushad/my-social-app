@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { AuthServiceService } from 'src/app/Services/auth-service.service';
+import { AuthServiceService } from '../../Services/auth-service.service';
 import { UpdateUserDialog } from '../update-user-dialog/update-user-dialog.component';
 
 export interface UserDetails {

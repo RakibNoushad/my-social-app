@@ -11,7 +11,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import {ErrorStateMatcher} from '@angular/material/core';
-import { UserDetails } from 'src/app/Services/user-service.service';
+import { UserDetails } from '../../Services/user-service.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -92,9 +92,10 @@ isExist =false;
     try {
       await this.authService.getUsers()
       .subscribe(async data => {
-        let user = data[data.findIndex(a => a.email === this.signupForm.controls.email.value)];
-        if (user) {
+        let temp = data[data.findIndex(a => a.email === this.signupForm.controls.email.value)];
+        if (temp) {
             this.isExist = true;
+            console.log(this.isExist);
           }
           else
           {

@@ -4,7 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import {ErrorStateMatcher} from '@angular/material/core';
-import { UserService } from 'src/app/Services/user-service.service';
+import { UserService } from '../../Services/user-service.service';
 
 interface Alert {
   type: string;

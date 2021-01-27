@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatChipInputEvent } from '@angular/material/chips';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import { AuthServiceService } from 'src/app/Services/auth-service.service';
+import { AuthServiceService } from '../../Services/auth-service.service';
 
 @Component({
   selector: 'app-update-info',
